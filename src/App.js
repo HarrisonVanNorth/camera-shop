@@ -79,10 +79,10 @@ class App extends Component {
       <Container>
         <Header _category={this._category} _filterName={this._filterName}/>
           <Row className="mt-3">
-          <Col xl="9" className="p-0">
+          <Col className="col-6">
           <CameraList cameras={newList} _addToCart={this._addToCart}/>
           </Col>
-          <Col className="p-0" sm="3">
+          <Col className="col-6">
           <ShoppingCart cartList={newCartList} _removeItem={this._removeItem}/>
           </Col>
         </Row>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, CardImg, CardBody, CardTitle, CardSubtitle, Button, Badge } from 'reactstrap';
+import ReactStars from 'react-stars'
+import { Card, CardImg, CardBody, CardTitle, CardSubtitle, Button, Badge, Col } from 'reactstrap';
 
 const CameraCard = ({camera, _addToCart}) => {
   
@@ -10,20 +11,20 @@ const CameraCard = ({camera, _addToCart}) => {
 
   let badge;
   if (camera.onSale === true){
-    badge = <Badge color="danger"> On Sale! </Badge>
+    badge = <Badge color="success"> On Sale! </Badge>
   }
 
   return (
       <Card className="">
-        <CardImg className="h-100 w-100" src= {camera.picture} alt="Card image cap" />
-        <CardBody>
-          <CardTitle>{camera.name}</CardTitle>
-          {badge}
-          <CardSubtitle>${camera.price}</CardSubtitle>
-          <Button onClick={_handleClick}>Button</Button>
+      {badge}
+      <CardBody>
+        <CardImg className="h-100 w-100" src={camera.picture} alt="Card image cap" />
+        <CardTitle>{camera.name}</CardTitle>
+        <CardSubtitle>${camera.price}</CardSubtitle>
+        <ReactStars count={camera.rating} size={36} color1={'#ffd700'}/>
+        <Button onClick={_handleClick}>Button</Button>
         </CardBody>
       </Card>
-
   )
 }
 

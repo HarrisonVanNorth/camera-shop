@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListGroup,ListGroupItem, ListGroupItemHeading, Button} from 'reactstrap';
+import { Card, CardTitle, Button} from 'reactstrap';
 import CartItem from './CartItem'
 
 const ShoppingCart = ({cartList, _removeItem}) => {
@@ -12,17 +12,14 @@ const ShoppingCart = ({cartList, _removeItem}) => {
 
 
   return (
-    <ListGroup className="">
-        < ListGroupItem active className = "" >
-          <ListGroupItemHeading className="">Shopping Cart</ListGroupItemHeading>
-        </ListGroupItem>
-<Button color="secondary"> Check Out </Button>
-        <h6>Total ${Total}</h6>
-        <h6>Tax ${Tax}</h6>
-        <h6>Sub Total ${SubTotal}</h6>
-
-          {Item}
-      </ListGroup>
+    <Card body inverse color = "warning" > 
+    <CardTitle className="">Shopping Cart</CardTitle>
+    <h6>Total ${Total}</h6>
+    <h6>Tax ${Tax}</h6>
+    <h6>Sub Total ${SubTotal}</h6>
+    {Item}
+    <Button className="mt-2" color="secondary"> Check Out </Button>
+      </Card>
 
   )
 }

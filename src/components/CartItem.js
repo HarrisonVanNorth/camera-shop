@@ -1,5 +1,5 @@
 import React from 'react';
-import {ListGroupItem, ListGroupItemHeading, Badge, ListGroupItemText, Button } from 'reactstrap';
+import {Card, CardTitle, Row, Button } from 'reactstrap';
 
 const CartItem = ({camera, _removeItem}) => {
   const _handleClick = () => {
@@ -7,13 +7,13 @@ const CartItem = ({camera, _removeItem}) => {
   }
 
   return (
-          < ListGroupItem className = "" >
-        <ListGroupItemHeading>{camera.name}</ListGroupItemHeading>
-          <ListGroupItemText className="">
-          <Badge pill>${camera.price}</Badge>
-          </ListGroupItemText>
-          <Button color="secondary" onClick={_handleClick}> Remove Item </Button>
-          </ListGroupItem>
+          <Card className="border-0"color="warning">
+          <Row>
+          <CardTitle className="col-3">{camera.name}</CardTitle>
+          <h6 className="col-3">${camera.price}</h6>
+          <Button className="col-3" color="secondary" onClick={_handleClick}> Remove Item </Button>
+          </Row>
+          </Card>
 
   )
 }
